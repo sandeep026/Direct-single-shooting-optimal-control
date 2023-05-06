@@ -20,7 +20,7 @@ The system admits the following analytical solution, which can be later used to 
 
 # Discretization
 
-The time domain is discretized and a piecewise constant control is assumed over each discretization interval. Using the initial condition for the states, the dynamics are integrated forward in time using a suitable numerical method like Euler foward, ruge kutta 45 etc. This follows a difference equation and the states are represented as a function of the control inputs. Similarly the integral in the objective function is discretized using a riemann sum or a sutable method. The nonlinear constraints are only evaluated at the grid points. Collectively, this results in a nonlinear optimization problem which can be solved using a off-the-shelf solver. Here, we haveused IPOPT for finding the optimal solution. The following figure illustrates the method, where q represents the discrete control inputs and x the state.
+The time domain is discretized and a piecewise constant control is assumed over each discretization interval. Using the initial condition for the states, the dynamics are integrated forward in time using a suitable numerical method like Euler foward, ruge kutta 45 etc. This follows a difference equation and the states are represented as a function of the control inputs. Similarly the integral in the objective function is discretized using a riemann sum or a sutable method. The nonlinear constraints are only evaluated at the grid points. Collectively, this results in a nonlinear optimization problem which can be solved using a off-the-shelf solver. Here, we haveused IPOPT for finding the optimal solution. The following figure [^2] illustrates the method, where q represents the discrete control inputs and x the state.
 
 ![image](https://user-images.githubusercontent.com/16457676/236629948-21ff2fb0-ab18-4f30-9996-298230e685be.png)
 
@@ -33,9 +33,12 @@ The results are plotted in phase space for a grid size of 50 and they are in clo
 
 # Known issues
 
-Although for simple problems this methods well, for more complex systems with higher nonlinearities it has been known to cause convergence issues for the solver. This is beacause the nonlinearity gets accumulated for every subsequent state when they are expressed as a function of the control input. As a result, Newton method based solvers like IPOPT which uses linearization at each iteration struggles with convergence due to poor approximation.
+Although for simple problems this methods well, for more complex systems with higher nonlinearities it has been known to cause convergence issues for the solver. This is beacause the nonlinearity gets accumulated for every subsequent state when they are expressed as a function of the control input. As a result, Newton method based solvers like IPOPT which uses linearization at each iteration struggles with convergence due to poor approximation. For more details, the [^3] can be referred where an indepth discussion of the issue and a solution to mitigate the issue is presented.
 
 # References
 
 [^1]: Conway, B. A. and K. Larson (1998). Collocation versus differential inclusion in direct optimization. Journal of Guidance, Control, and Dynamics, 21(5), 780–785
 
+[^2]: Diehl, M., & Gros, S. (2011). Numerical optimal control. Optimization in Engineering Center (OPTEC).
+
+[^3]: Albersmeyer, J., & Diehl, M. (2010). The lifted Newton method and its application in optimization. SIAM Journal on Optimization, 20(3), 1655-1684.
