@@ -3,19 +3,18 @@
 An optimal control problem for a cart system is solved using single shooting method. The optimal control problem is discretized and transformed to a nonlinear optimization problem and solved using the state of the art solver IPOPT.
 
 # Requirements
-- MATLAB/OCTAVE
-- Casadi
-
+- MATLAB/[OCTAVE](https://octave.org/)
+- [Casadi](https://web.casadi.org/)
 
 # Problem description
 
-The optimal control problem for the cart system is provided below. z1 and z2 are the position and velocity of the cart and they comprise the states. f is the force applied and there is a drag force which is proportional to the velocity of the cart. The system starts from rest and additional boundary condition is placed at the end of the trajectory. Along the trajectory the control effort is minimized from time 0 to 2.
+The optimal control problem for the cart system [^1] is provided below. z~1 and z~2 are the position and velocity of the cart and they comprise the states. f is the force applied and there is a drag force which is proportional to the velocity of the cart. The system starts from rest and additional boundary condition is placed at the end of the trajectory. Along the trajectory the control effort is minimized from time 0 to 2.
 
 ![image](https://user-images.githubusercontent.com/16457676/236567436-9d87b891-e74f-4299-802c-a394693c1f60.png)
 
 # Analytical solution
 
-The system admits the following analytical solution, which later can be used to verify the numerical solution and its accuracy.
+The system admits the following analytical solution, which can be later used to verify the numerical solution and its accuracy.
 
 ![image](https://user-images.githubusercontent.com/16457676/236629178-b6da4837-b1d8-454d-9ec4-2d67fb1abeba.png)
 
@@ -35,4 +34,8 @@ The results are plotted in phase space for a grid size of 50 and they are in clo
 # Known issues
 
 Although for simple problems this methods well, for more complex systems with higher nonlinearities it has been known to cause convergence issues for the solver. This is beacause the nonlinearity gets accumulated for every subsequent state when they are expressed as a function of the control input. As a result, Newton method based solvers like IPOPT which uses linearization at each iteration struggles with convergence due to poor approximation.
+
+# References
+
+[^1]: Conway, B. A. and K. Larson (1998). Collocation versus differential inclusion in direct optimization. Journal of Guidance, Control, and Dynamics, 21(5), 780–785
 
