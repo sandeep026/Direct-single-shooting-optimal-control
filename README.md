@@ -26,6 +26,12 @@ The time domain is discretized and a piecewise constant control is assumed over 
 
 ![image](https://user-images.githubusercontent.com/16457676/236629948-21ff2fb0-ab18-4f30-9996-298230e685be.png)
 
+# Results
+
+The results are plotted in phase space for a grid size of 50 and they are in close agreement with the analytical solution.
+![image](https://user-images.githubusercontent.com/16457676/236630435-26ad7bcb-c5c5-4c6d-a366-9bd5ce6f8922.png)
+
+
 
 # Known issues
 
