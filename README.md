@@ -3,8 +3,8 @@
 An optimal control problem for a cart system is solved using single shooting method. The optimal control problem is discretized and transformed to a nonlinear optimization problem and solved using the state of the art solver IPOPT.
 
 # Requirements
--MATLAB/OCTAVE
--Casadi
+- MATLAB/OCTAVE
+- Casadi
 
 
 # Problem description
