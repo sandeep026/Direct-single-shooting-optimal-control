@@ -10,7 +10,16 @@ Casadi
 
 # Problem description
 
-The optimal control problem for the cart system is provided below. z1 and z2 are the position and velocity of the cart and they comprice the states. f is the force applied and there is a drag force which is proportional to the velocity of the cart. The system starts from rest and additional boundary condition is placed at the end of the trajectory.
+The optimal control problem for the cart system is provided below. z1 and z2 are the position and velocity of the cart and they comprise the states. f is the force applied and there is a drag force which is proportional to the velocity of the cart. The system starts from rest and additional boundary condition is placed at the end of the trajectory. Along the trajectory the control effort is minimized from time 0 to 2.
 
 ![image](https://user-images.githubusercontent.com/16457676/236567436-9d87b891-e74f-4299-802c-a394693c1f60.png)
 
+# Analytical solution
+
+The system admits the following analytical solution, which later can be used to verify the numerical solution and its accuracy.
+
+![image](https://user-images.githubusercontent.com/16457676/236629178-b6da4837-b1d8-454d-9ec4-2d67fb1abeba.png)
+
+# Discretization
+
+The time domain is discretized and a piecewise constant control is assumed over each discretization interval. Using the initial condition for the states, the dynamics are integrated forward in time using a suitable numerical method like Euler foward, ruge kutta 45 etc. This follows a difference equation and the states are represented as a function of the control inputs. Similarly the integral in the objective function is discretized using a riemann sum or a sutable method. The nonlinear constraints are only evaluated at the grid points. Collectively, this results in a nonlinear optimization problem which can be solved using a off-the-shelf solver. Here, we haveused IPOPT for finding the optimal solution.
