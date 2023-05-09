@@ -51,12 +51,9 @@ sol=opti.solve();
 X=sol.value(X);
 U=sol.value(U);
 
-% Evaluate analytical solution
-t=0:dt:2;
-[Xa,Ua,J]=analytical_solution(t);
 
 % Compare the numerical and analytical solution
-t=0:dt:2;
+t=linspace(0,2,N+1);
 X=sol.value(X);
 U=sol.value(U);
 [Xa,Ua]=analytical_solution(t);
@@ -67,4 +64,12 @@ grid
 xlabel('$x_1$')
 ylabel('$x_2$')
 legend('analytical','single shooting','Location','northwest')
+
+figure
+plot(t,Ua)
+hold on
+stairs(t,[U U(:,end)])
+legend('analytical','single shooting','Location','northwest')
+
+
  
