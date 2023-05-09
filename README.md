@@ -8,7 +8,7 @@ An optimal control problem for a cart system is solved using single shooting met
 
 # Problem description
 
-The optimal control problem for the cart system [^1] is provided below. z~1 and z~2 are the position and velocity of the cart and they comprise the states. f is the force applied and there is a drag force which is proportional to the velocity of the cart. The system starts from rest and additional boundary condition is placed at the end of the trajectory. Along the trajectory the control effort is minimized from time 0 to 2.
+The optimal control problem for the cart system [^1] is provided below. z<sub>1</sub> and z<sub>2</sub> are the position and velocity of the cart and they comprise the states. f is the force applied and there is a drag force which is proportional to the velocity of the cart. The system starts from rest and additional boundary condition is placed at the end of the trajectory. Along the trajectory the control effort is minimized from time 0 to 2.
 
 ![image](https://user-images.githubusercontent.com/16457676/236567436-9d87b891-e74f-4299-802c-a394693c1f60.png)
 
@@ -26,10 +26,11 @@ The time domain is discretized and a piecewise constant control is assumed over 
 
 # Results
 
-The results are plotted in phase space for a grid size of 50 and they are in close agreement with the analytical solution.
-![image](https://user-images.githubusercontent.com/16457676/236630435-26ad7bcb-c5c5-4c6d-a366-9bd5ce6f8922.png)
+The results are plotted in phase space for a grid size of 200 and they are in close agreement with the analytical solution.
 
+![image](https://github.com/sandeep026/Single-shooting-optimal-control/assets/16457676/fdd3bac6-e866-4300-8dcc-cc5924e10047)
 
+![image](https://github.com/sandeep026/Single-shooting-optimal-control/assets/16457676/9bcdb07c-e4d3-4117-8086-dea87b1737be)
 
 # Known issues
 
