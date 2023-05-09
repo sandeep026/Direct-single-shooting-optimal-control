@@ -37,6 +37,8 @@ The results are plotted in phase space for a grid size of 200 and they are in cl
 |Analytical|0.577678|
 |Numerical|0.5779|
 
+The slight difference is due to discretization error which can be reduced to an extent. The peicewise approximation of the control input is one of the reason.
+
 # Advantages
 
 Since, its a sequential method, the control inputs are the only decision variables. As a result, smaller sized optimization problems are solved.
@@ -45,7 +47,7 @@ Since, its a sequential method, the control inputs are the only decision variabl
 # Known issues
 
 1. Although for simple problems this methods well, for more complex systems with higher nonlinearities it has been known to cause convergence issues for the solver. This is beacause the nonlinearity gets accumulated for every subsequent state when they are expressed as a function of the control input. As a result, Newton method based solvers like IPOPT which uses linearization at each iteration struggles with convergence due to poor approximation. For more details, the [^3] can be referred where an indepth discussion of the issue and a solution to mitigate the issue is presented.
-2. The optimization problem is dense and sparsity cannot be exploited
+2. The optimization problem is dense and sparsity cannot be exploited (in some cases depends on the objective and constraint function like example problem solved here)
 
 # References
 
