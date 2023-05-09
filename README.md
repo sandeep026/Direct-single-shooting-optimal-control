@@ -37,7 +37,7 @@ The results are plotted in phase space for a grid size of 200 and they are in cl
 |Analytical|0.577678|
 |Numerical|0.5779|
 
-The slight difference is due to discretization error which can be reduced to an extent. The peicewise approximation of the control input is one of the reason.
+The slight difference is due to discretization error which can be reduced to an extent by increasing the grid size. The peicewise approximation of the control input is one of the reason.
 
 # Advantages
 
